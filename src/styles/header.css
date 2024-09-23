@@ -1,0 +1,35 @@
+header {
+    width: 600px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: sans-serif;
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+
+    h1 {
+        display: flex;
+        gap: 5%;
+        width: 150px;
+        height: 30px;
+        font-size: 24px;
+        text-align: start;
+    }
+
+    h2 {
+        display: flex;
+        width: 140px;
+        height: 30px;
+        flex-direction: column;
+        text-align: end;
+        justify-content: flex-end;
+        color: gray;
+        font-size: 16px;
+        font-weight: 400;
+        bottom: 0;
+    }
+}

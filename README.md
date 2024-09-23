@@ -18,15 +18,19 @@
     │   ├── fonts/
     │   └── icons/
     │
-    │── components      # 컴포넌트 모음
+    │── components      # 컴포넌트 코드 모음
     │   
     │
-    ├── apis/           # api 모음
+    ├── core/           # 훅, api 등 주요 함수 모음
     │
     │
     ├── utils/          # 날짜 가져오기와 같은 유틸 함수 모음  
     │   
     │   
     │
-    └── style/          # CSS 파일 모음
+    ├─── style/          # CSS 파일 모음
+    │
+    ├── App.js/          # 컴포넌트 렌더링
+    │   
+    └── index.js/        # 앱의 메인 함수
 ```
