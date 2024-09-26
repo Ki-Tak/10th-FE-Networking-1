@@ -1,4 +1,4 @@
-function GetDateStr() {
+function getTodayStr() {
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작하므로 1을 더함
@@ -9,4 +9,4 @@ function GetDateStr() {
 
     return `${year}. ${month}. ${date} ${dayOfWeek}`;
 }
-export default GetDateStr;
+export default getTodayStr;

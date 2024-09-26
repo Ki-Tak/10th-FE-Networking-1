@@ -1,0 +1,59 @@
+List {
+    width: 798px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: sans-serif;
+    border: 1px solid gray;
+    background-color: whitesmoke;
+    color: gray;
+    gap: 20px;
+    text-align: center;
+
+    li {
+        width: auto;
+        height: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    h2 {
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.5)
+    }
+
+    h2 span {
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .wait {
+        h2 {
+            display: none;
+        }
+    }
+
+    /* rgb값
+    stColor = [136, 144, 225];
+    edColor = [90, 97, 199];
+    */
+    .selected {
+        background-color: #8890E1;
+        width: 150px;
+        justify-content: center;
+        gap: 50px;
+        color: #FFF;
+
+        h1 {
+            font-weight: bold;
+        }
+    }
+}
