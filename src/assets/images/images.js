@@ -1,1 +1,1 @@
-export const news = "./src/assets/images/newspaper.png";
+export const newsURL = "./src/assets/images/newspaper.png";

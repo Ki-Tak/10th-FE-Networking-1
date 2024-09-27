@@ -23,34 +23,12 @@ function List() {
     return {
         element: `
             <List>
-                <li class="selected">
-                <h1>${category[0]}</h1>
-                <h2><span>${nowNum}</span>/${categoryNum[0]}</h2>
-                </li>
-                <li class="wait">
-                <h1>${category[1]}</h1>
-                <h2><span>${nowNum}</span>/${categoryNum[1]}</h2>
-                </li>
-                <li class="wait">
-                <h1>${category[2]}</h1>
-                <h2><span>${nowNum}</span>/${categoryNum[2]}</h2>
-                </li>
-                <li class="wait">
-                <h1>${category[3]}</h1>
-                <h2><span>${nowNum}</span>/${categoryNum[3]}</h2>
-                </li>
-                <li class="wait">
-                <h1>${category[4]}</h1>
-                <h2><span>${nowNum}</span>/${categoryNum[4]}</h2>
-                </li>
-                <li class="wait">
-                <h1>${category[5]}</h1>
-                <h2><span>${nowNum}</span>/${categoryNum[5]}</h2>
-                </li>
-                <li class="wait">
-                <h1>${category[6]}</h1>
-                <h2><span>${nowNum}</span>/${categoryNum[6]}</h2>
-                </li>
+                ${category.map((value, index) => `
+                    <li class="${index === 0 ? 'selected' : 'wait'}">
+                        <h1>${value}</h1>
+                        <h2><span>${nowNum}</span>/${categoryNum[index]}</h2>
+                    </li>
+                `).join('')}
             </List>
         `
     };
