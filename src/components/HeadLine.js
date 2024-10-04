@@ -1,22 +1,31 @@
-function HeadLine() {
-    const newHeadLine1 = [
-        "연합뉴스",
-        "공공의료기관 의사 3천500여명 부족…연봉 6억여원까지 치솟아"
-    ]
-    const newHeadLine2 = [
-        "연합뉴스",
-        "의대교수들 \"국민 상해입히는 급발진 정부…의평원 말살하려 해\""
-    ]
+import { getHeadLineData } from "../core/apis.js";
+async function HeadLine() {
+    const dummyData = {
+        newHeadLine1: [
+            { journer: "로딩 중..", content: "로딩 중.." }
+        ],
+        newHeadLine2: [
+            { journer: "로딩 중..", content: "로딩 중.." }
+        ]
+    };
+
+    let headLineData = dummyData;
+    try {
+        headLineData = await getHeadLineData();
+    } catch (error) {
+        console.error('Error fetching headline data:', error);
+    }
+
     return {
         element: `
             <article>
                 <div>
-                <h1>${newHeadLine1[0]}</h1>
-                <h2>${newHeadLine1[1]}</h2>
+                <h1>${headLineData.newHeadLine1[0].journer}</h1>
+                <h2>${headLineData.newHeadLine1[0].content}</h2>
                 </div>
                 <div>
-                <h1>${newHeadLine2[0]}</h1>
-                <h2>${newHeadLine2[1]}</h2>
+                <h1>${headLineData.newHeadLine2[0].journer}</h1>
+                <h2>${headLineData.newHeadLine2[0].content}</h2>
                 </div>
             </article>
         `
