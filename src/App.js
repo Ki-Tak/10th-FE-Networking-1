@@ -3,9 +3,12 @@ import List from './components/List.js';
 import HeadLine from './components/HeadLIne.js';
 import createComponent from './core/component.js';
 async function App() {
-    const headerComponent = createComponent(Header);
-    const headLineComponent = await createComponent(HeadLine);
-    const listComponent = createComponent(List);
+    const [headerComponent, headLineComponent, listComponent] = await Promise.all([
+        createComponent(Header),
+        createComponent(HeadLine),
+        createComponent(List)
+    ]);
+
     return {
         element: `
         ${headerComponent.element}
