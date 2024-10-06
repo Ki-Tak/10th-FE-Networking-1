@@ -50,15 +50,8 @@ function List() {
         clearTimeout(autoSelectTimer);
         autoSelectNextCategory();
     };
-
-    // 컴포넌트가 렌더링된 후 이벤트 리스너를 추가 (요소가 추가되기 전에 등록되는 것을 방지)
-    setTimeout(() => {
-        addListEventListeners();
-        autoSelectNextCategory();
-    }, 0);
-
-    return {
-        element: `
+    const render = () => {
+        const element = `
             <List>
                 ${category.map((value, index) => `
                     <li class="${index === 0 ? 'selected' : 'wait'}" >
@@ -67,7 +60,19 @@ function List() {
                     </li>
                 `).join('')}
             </List>
-        `
+        `;
+
+        // DOM에 요소 삽입 후 이벤트 리스너 추가
+        setTimeout(() => {
+            addListEventListeners();
+            autoSelectNextCategory();
+        }, 0);
+
+        return element;
+    };
+
+    return {
+        render
     };
 }
 export default List;
