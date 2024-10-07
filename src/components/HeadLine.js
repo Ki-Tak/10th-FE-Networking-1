@@ -13,7 +13,7 @@ async function HeadLine() {
     let leftIndex = 0;
     let rightIndex = 0;
     let headLineData = dummyData;
-    let headLineTimer;
+    let headLineTimer
     try {
         headLineData = await getHeadLineData();
     } catch (error) {
@@ -22,15 +22,19 @@ async function HeadLine() {
     const updateHeadLine = () => {  // 헤드라인 업데이트
         document.querySelector('article').innerHTML = render();
     }
-    const rollHeadLine = () => {    // 5초 지나면 헤드라인 업데이트 
+    const rollHeadLine = () => {  // 헤드라인 롤링
         headLineTimer = setTimeout(() => {
             leftIndex = (leftIndex + 1) % headLineData.newHeadLine1.length;
-            rightIndex = (rightIndex + 1) % headLineData.newHeadLine2.length;
             updateHeadLine();
+            setTimeout(() => {
+                rightIndex = (rightIndex + 1) % headLineData.newHeadLine2.length;
+                updateHeadLine();
+            }, 1000);
             rollHeadLine(); // 재귀호출 
         }, 5000);
-    }
-    const startRoll = () => {
+    };
+
+    const startRoll = () => { // 타이머 중복호출 방지
         if (!headLineTimer) {
             rollHeadLine();
         }
