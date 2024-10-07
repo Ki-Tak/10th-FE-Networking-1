@@ -7,6 +7,7 @@ article {
     justify-content: center;
     align-items: center;
 
+
     div {
         width: 390px;
         height: 32px;
@@ -21,6 +22,7 @@ article {
         overflow: hidden;
         text-overflow: ellipsis;
         cursor: pointer;
+
     }
 
     h1 {
@@ -38,9 +40,7 @@ article {
         color: rgb(82, 89, 102);
     }
 
-    :hover {
-        h2 {
-            text-decoration: underline;
-        }
+    div:hover h2 {
+        text-decoration: underline;
     }
 }

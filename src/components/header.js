@@ -1,3 +1,4 @@
+// 헤더 컴포넌트 함수
 import getTodayStr from "../utils/getTodayStr.js";
 import { newsURL } from "../assets/images/images.js";
 function Header() {

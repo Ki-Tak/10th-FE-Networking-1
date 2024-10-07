@@ -1,3 +1,4 @@
+// 리스트 컴포넌트 함수 
 function List() {
     const category = [
         "종합/경제",
