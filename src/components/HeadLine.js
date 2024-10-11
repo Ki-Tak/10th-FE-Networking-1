@@ -14,6 +14,9 @@ async function HeadLine() {
     let rightIndex = 0;
     let headLineData = dummyData;
     let headLineTimer
+    const rollingPeriod = 5000;
+    const rollInterval = 1000;
+    const aniDuration = 500;
     try {
         headLineData = await getHeadLineData();
     } catch (error) {
@@ -31,7 +34,7 @@ async function HeadLine() {
     `;
         setTimeout(() => {
             leftHeadLine.classList.remove('headline');
-        }, 500);
+        }, aniDuration);
     }
     const updateRight = () => { // 오른쪽 헤드라인 업데이트하는 함수
         const rightHeadLine = document.getElementById('right');
@@ -42,7 +45,7 @@ async function HeadLine() {
         `;
         setTimeout(() => {
             rightHeadLine.classList.remove('headline');
-        }, 500);
+        }, aniDuration);
     }
     const rollHeadLine = () => {  // 헤드라인 롤링
         headLineTimer = setTimeout(() => {
@@ -51,9 +54,9 @@ async function HeadLine() {
             setTimeout(() => {
                 rightIndex = (rightIndex + 1) % headLineData.newHeadLine2.length;
                 updateRight();
-            }, 1000);
+            }, rollInterval);
             rollHeadLine(); // 재귀호출 
-        }, 4500); // 애니메이션 시간 생각하여 500 줄임 
+        }, rollingPeriod); // 애니메이션 시간 생각하여 500 줄임 
     };
 
     const startRoll = () => { // 타이머 중복호출 방지
