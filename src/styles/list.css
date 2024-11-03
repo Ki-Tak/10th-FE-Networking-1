@@ -8,7 +8,49 @@
       }
   }
 
-  List {
+  tapViewer {
+      width: 798px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: sans-serif;
+      font-size: 14px;
+      font-style: normal;
+
+      tapContainer {
+          display: flex;
+          gap: 24px;
+          height: auto;
+
+          tap {
+              cursor: pointer;
+
+              &.tapSelected {
+                  color: black;
+                  font-weight: 700;
+              }
+
+              &.tapWait {
+                  color: #879298;
+                  font-weight: 500;
+              }
+          }
+      }
+
+      viewerContainer {
+
+          img {
+              width: 24px;
+              height: 24px;
+              cursor: pointer;
+          }
+
+          gap: 8px;
+      }
+  }
+
+  list {
       width: 798px;
       height: 35px;
       display: flex;
@@ -33,7 +75,7 @@
           padding-right: 10px;
           cursor: pointer;
 
-          &.selected {
+          &.listSelected {
               background-color: #8890E1;
               width: 100px;
               justify-content: space-between;
@@ -45,7 +87,7 @@
               }
           }
 
-          &.selected::before {
+          &.listSelected::before {
               content: "";
               position: absolute;
               z-index: 0;
@@ -60,7 +102,7 @@
               animation: scaleAnimation 20s linear forwards;
           }
 
-          &.wait {
+          &.listWait {
               h2 {
                   opacity: 0;
                   /* opacity가 성능 측면에서 우수하다길래.. display:none에서 변경 */

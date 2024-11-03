@@ -1,4 +1,4 @@
-function getTodayStr() {
+function getTodayStr() {    // 현재 날짜를 반환하는 함수 ex) [2024. 11. 03 월요일] 
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작하므로 1을 더함
