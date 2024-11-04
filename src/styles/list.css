@@ -39,14 +39,24 @@
       }
 
       viewerContainer {
+          display: flex;
+          gap: 8px;
 
-          img {
+          viewer {
+              cursor: pointer;
               width: 24px;
               height: 24px;
-              cursor: pointer;
           }
 
-          gap: 8px;
+          .viewerSelected svg path {
+              fill: #4362D0;
+              /* 선택된 상태의 색상 */
+          }
+
+          .viewerWait svg path {
+              fill: #879298;
+              /* 대기 상태의 색상 */
+          }
       }
   }
 
