@@ -26,12 +26,12 @@
           tap {
               cursor: pointer;
 
-              &.tapSelected {
+              &.selected {
                   color: black;
                   font-weight: 700;
               }
 
-              &.tapWait {
+              &.wait {
                   color: #879298;
                   font-weight: 500;
               }
@@ -48,12 +48,12 @@
               height: 24px;
           }
 
-          .viewerSelected svg path {
+          .selected svg path {
               fill: #4362D0;
               /* 선택된 상태의 색상 */
           }
 
-          .viewerWait svg path {
+          .wait svg path {
               fill: #879298;
               /* 대기 상태의 색상 */
           }
@@ -85,7 +85,7 @@
           padding-right: 10px;
           cursor: pointer;
 
-          &.listSelected {
+          &.selected {
               background-color: #8890E1;
               width: 100px;
               justify-content: space-between;
@@ -97,7 +97,7 @@
               }
           }
 
-          &.listSelected::before {
+          &.selected::before {
               content: "";
               position: absolute;
               z-index: 0;
@@ -112,7 +112,7 @@
               animation: scaleAnimation 20s linear forwards;
           }
 
-          &.listWait {
+          &.wait {
               h2 {
                   opacity: 0;
                   /* opacity가 성능 측면에서 우수하다길래.. display:none에서 변경 */
